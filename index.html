@@ -10,35 +10,21 @@
 </head>
 <body>
   
+  <div id="container">
 
-  <main>
-    <section class="container mt-5">
-        <div class="slider d-flex">
-            <div class="image-container" id="main-image">
-              
-                <div class="image-text" id="main-image-text">
-                    
-                
-                </div>
-            </div>
-            <div class="image-slider" id="slider-container">
-                <div class="before-circle" id="previous-carousel"> 
-                    <div class="slide-up">
-                        <i class="fa-solid fa-angle-up"></i>
-                    </div>
-                </div>
-                    
-                
-                <div class="after-circle" id="next-carousel">
-                    <div class="slide-down">
-                        <i class="fa-solid fa-angle-down"></i>
-                    </div>
-                </div> 
-                
-            </div>
-        </div>
-    </section>
-</main>
+    <div class="container_img" @mauseleave="autoPlay" @mouseover ="stopAutoplay">
+      
+      <img  :src="images[activelement].image" alt="" > 
+      <div class="title">{{images[activelement].title}}</div>
+      <div class="description">{{images[activelement].text}}</div>
+  
+    </div>
+
+    <div class="thumbnail">
+    </div>
+    
+</div>
+  
 <script src="js/script.js"></script>
 </body>
 </html>
