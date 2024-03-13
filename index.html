@@ -8,23 +8,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/mine.css">
 </head>
+
 <body>
-  
   <div id="container">
 
     <div class="container_img" @mauseleave="autoPlay" @mouseover ="stopAutoplay">
-      
-      <img  :src="images[activelement].image" alt="" > 
-      <div class="title">{{images[activelement].title}}</div>
-      <div class="description">{{images[activelement].text}}</div>
+     <img  :src="images[activelement].image" alt="" > 
+     <div class="title">{{images[activelement].title}}</div>
+     <div class="description">{{images[activelement].text}}</div>
   
     </div>
 
     <div class="thumbnail">
+
+        <div @click ="nextImage" class="button_next"><i class="fa-solid fa-chevron-down"></i></div>
+        <div  @click ="prevImage" class="button_prev"><i class="fa-solid fa-chevron-up"></i></div>
+
+      <img  v-for = "(img, index) in images" 
+            :src="img.image" :class="activelement === index ? 'active' : ''" 
+            @click="changeImage(index)">
+
     </div>
+
+   
     
 </div>
+
   
 <script src="js/script.js"></script>
+
 </body>
 </html>

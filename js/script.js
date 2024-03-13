@@ -4,40 +4,72 @@ const { createApp } = Vue;
 createApp({
 
     data(){
-          return{
+         return{
+            activelement: 0,
+            timer: 0,
+           
+                
                 images: [
                     {
                         image: 'img/01.webp',
                         title: "Marvel's Spiderman Miles Morale",
-                        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores, quisquam?',
+                        text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
                     },
                     {
                         image: 'img/02.webp',
                         title: 'Ratchet & Clank: Rift Apart',
-                        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores, quisquam?',
+                        text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
                     }, 
                     {
                         image: 'img/03.webp',
                         title: 'Fortnite',
-                        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores, quisquam?',
+                        text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
                     }, 
                     {
                         image: 'img/04.webp',
                         title: 'Stray',
-                        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores, quisquam?',
+                        text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
                     }, 
                     {
                         image: 'img/05.webp',
                         title: "Marvel's Avengers",
-                        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores, quisquam?',
+                        text: 'Marvel s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                     }
                 ]
-          }
+             
+
+         }
 
     },
-    methods : 
+    methods : {
+            nextImage(){
+                this.activelement++;
+                if (this.activelement === this.images.length) {
+                    this.activelement = 0;
+                }
+            },
 
-  }).mount("#container")
+            prevImage(){
+                this.activelement--;
+                if (this.activelement < 0) {
+                    this.activelement = this.images.length -1;
+                }
+            },
+                changeImage(idx){
+                    this.activelement = idx;
+
+            },
+            autoPlay(){
+            clearInterval(this.timer);
+            this.timer = setInterval(this.nextImage, 3000);
+
+            },
+            stopAutoplay(){
+                clearInterval(this.timer);
+            }
+    }
+
+}).mount("#container")
 
 
 
