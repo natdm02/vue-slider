@@ -42,12 +42,12 @@
 
 .button_next , .button_prev{
   width: 20px;
- height: 20px;
- padding: 18px;
- border-radius: 50%;
- background-color: rgba(230, 230, 230, 0.747);
- z-index: 2; 
- display: flex;
+  height: 20px;
+  padding: 18px;
+  border-radius: 50%;
+  background-color: rgba(230, 230, 230, 0.747);
+  z-index: 2; 
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -62,11 +62,11 @@
 }
 
 .button_prev{
- position: absolute;
- top: 0;
- left: 0;
- right: 0;
- margin: auto
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto
 }
 
 

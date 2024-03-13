@@ -4,10 +4,10 @@ const { createApp } = Vue;
 createApp({
 
     data(){
-         return{
+          return{
             activelement: 0,
             timer: 0,
-           
+            
                 
                 images: [
                     {
@@ -36,9 +36,8 @@ createApp({
                         text: 'Marvel s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                     }
                 ]
-             
-
-         }
+            
+          }
 
     },
     methods : {
